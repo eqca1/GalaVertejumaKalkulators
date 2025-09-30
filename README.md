@@ -11,10 +11,10 @@ Java programmēšanas valodā izstrādātā programmatūras projekta sākotnēj�
 	- [x] Ievadīt audzēkņus
 	- [x] Ievadīt kritērijus
 	- [x] Ievadīt kritēriju svarus
-	- [ ] Ievadīt vērtējumus
+	- [x] Ievadīt vērtējumus
 	- [ ] Labot kritēriju
 	- [ ] Labot kritērija svaru
 	- [ ] Labot iegūto vērtējumu
-	- [ ] Aprēķināt gala vērtējumu
+	- [x] Aprēķināt gala vērtējumu
 	- [ ] Saglabāt rezultātus failā
 	- [ ] Nolasīt rezultātus no faila
