@@ -41,10 +41,28 @@ public class GalvenaKlase {
 			case 2: PaligKlase.ievadKrit(); break;
 			case 3: if( krit.size() == 0) { JOptionPane.showMessageDialog(null, "Nav ievadīti kritēriji!", "Kļūda", JOptionPane.ERROR_MESSAGE); break; }
 				PaligKlase.ievadKritSv(); break;
-			case 4: PaligKlase.ievadVert(); break;
+			case 4: if( krit.size() == 0) { JOptionPane.showMessageDialog(null, "Nav ievadīti kritēriji!", "Kļūda", JOptionPane.ERROR_MESSAGE); break; }
+				PaligKlase.ievadVert(); break;
 			case 6: if( audzek.size() == 0) { JOptionPane.showMessageDialog(null, "Nav ievadīti audzēkņi!", "Kļūda", JOptionPane.ERROR_MESSAGE); break; }
 				if( krit.size() == 0) { JOptionPane.showMessageDialog(null, "Nav ievadīti kritēriji!", "Kļūda", JOptionPane.ERROR_MESSAGE); break; } 
 				PaligKlase.vertAprek(); break;
+			case 5:
+				int GalvIzvq;
+				String GalvIzq;
+				GalvIzq =JOptionPane.showInputDialog(null, "Izvēlies darbību~\n1. Labot kritēriju!"
+						+ "\n2. Labot kritērija svaru!\n"
+						+ "3. Labot iegūto vērtējumu\n"
+						+ "0. Atgriezties!", "...");
+				GalvIzvq = Integer.parseInt(GalvIzq);
+					switch(GalvIzvq) { 
+					case 0: break;
+					case 1: PaligKlase.ievadKrit(); break;
+					case 2: if( krit.size() == 0) { JOptionPane.showMessageDialog(null, "Nav ievadīti kritēriji!", "Kļūda", JOptionPane.ERROR_MESSAGE); break; }
+					PaligKlase.ievadKritSv(); break;
+					case 3: if( krit.size() == 0) { JOptionPane.showMessageDialog(null, "Nav ievadīti kritēriji!", "Kļūda", JOptionPane.ERROR_MESSAGE); break; }
+					PaligKlase.ievadVert(); break;
+					}
+					break;
 			}
 		}while(GalvIzv > 0 || GalvIzv < 8);
 		
