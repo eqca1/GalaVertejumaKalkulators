@@ -10,15 +10,19 @@ import javax.swing.JOptionPane;
 public class GalvenaKlase {
 	
 	static ArrayList<String> audzek = new ArrayList<String>();
+	static ArrayList<String> krit = new ArrayList<String>();
+	static ArrayList<Integer> kritSv = new ArrayList<Integer>();
+
 	
 	public static void main(String[] args) {
 		int studSk, kritSk;
 		Scanner scan = new Scanner(System.in);
 		DecimalFormat df = new DecimalFormat("0.#");
 		
-		
-		
-		int GalvIzv = Integer.parseInt(JOptionPane.showInputDialog(null, "Izvēlies darbību~\n1. Pievienot audzēkņu!"
+		int GalvIzv;
+		String GalvIz;
+		do {
+		GalvIz =JOptionPane.showInputDialog(null, "Izvēlies darbību~\n1. Pievienot audzēkņu!"
 				+ "\n2. Ievadīt kritērijus!\n"
 				+ "3. Ievadīt kritēriju svarus\n"
 				+ "4. Ievadīt vērtējumus\n"
@@ -26,17 +30,18 @@ public class GalvenaKlase {
 				+ "6. Aprēķināt gala vērtējumu\n"
 				+ "7. Saglabāt rezultātus failā\n"
 				+ "8. Nolasīt rezultātus no faila\n"
-				+ "0. Apturēt programmu!", "Izvēlne"));
-		do {
+				+ "0. Apturēt programmu!", "...");
+		GalvIzv = Integer.parseInt(GalvIz);
 			switch(GalvIzv) {
 			
 			case 0: JOptionPane.showMessageDialog(null, "Programma ir apturēta!"); GalvIzv = -1; break;
 			case 1: PaligKlase.pievAudz(); break;
-			case 2: 
+			case 2: PaligKlase.ievadKrit(); break;
+			case 3: PaligKlase.ievadKritSv(); break;
 			
 			
 			}
-		}while(GalvIzv < 0 || GalvIzv > 8);
+		}while(GalvIzv > 0 || GalvIzv < 8);
 		
 		
 		/*
@@ -51,6 +56,8 @@ public class GalvenaKlase {
 		}while(studSk<1);
 		String[] studenti = new String[studSk];
 		*/
+		
+		/*
 		// Vērtēšanas kritēriju skaita ievade
 		do {
 			System.out.println("Kāds būs kritēriju skaits?");
@@ -64,9 +71,12 @@ public class GalvenaKlase {
 		int[] kriterijaSvars = new int[kritSk];
 		int[][] kriterijaVertejums = new int[studSk][kritSk];
 		double[] semestraVertejums = new double[studSk];
-		
+	
+	
 		scan.nextLine();
+	*/
 		
+	/*	
 		// Ievada audzēkņu vārdus, uzvārdus
 		for(int i=0; i<studenti.length; i++) {
 			do {
@@ -74,8 +84,9 @@ public class GalvenaKlase {
 				studenti[i] = scan.nextLine().trim();
 			} while(!studenti[i].matches("^[\\p{L} ]+$"));
 		}
-		
+		*/
 		// Definē kritērijus
+		/*
 		int maxSvars = 100, sk = 1;
 		double atlSvars;
 		for(int i=0; i<kriteriji.length; i++) {
@@ -94,7 +105,7 @@ public class GalvenaKlase {
 				kriterijaSvars[i] = scan.nextInt();
 				/* Minimālā KATRA ATLIKUŠĀ kritērija svars ir 5
 				 * kopējai svaru vērtībai ir jābūt 100 (ne mazāk, ne vairāk)
-				*/
+				
 				atlSvars = (maxSvars - kriterijaSvars[i]) / (double)(kriteriji.length - sk);
 			} while(kriterijaSvars[i]>maxSvars || kriterijaSvars[i]<5 || 
 				  (i != kriteriji.length-1 && kriterijaSvars[i] == maxSvars) ||
@@ -104,6 +115,14 @@ public class GalvenaKlase {
 			sk++;
 			scan.nextLine();
 		}
+
+		*/
+
+		
+		/*
+		
+		
+		
 		
 		// Norāda vērtējumu kādu ieguvis katrs audzēknis par katru kritēriju
 		for(int i=0; i<kriterijaVertejums.length; i++) {
@@ -138,5 +157,9 @@ public class GalvenaKlase {
 					+ "\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
 		}
 		scan.close();
+		
+		
+		
+		*/
 	}
 }

@@ -2,16 +2,75 @@ package pakotne;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.sql.rowset.serial.SerialJavaObject;
 import javax.swing.JOptionPane;
 public class PaligKlase {
 	
 	static void pievAudz() {
 		String vards;
 		do{
-			vards = JOptionPane.showInputDialog(null, "Lūdzu ievadiet audzēkņa vārdu!", "Ievade");
+			vards = JOptionPane.showInputDialog(null, "Lūdzu ievadiet audzēkņa vārdu!", "...", JOptionPane.PLAIN_MESSAGE);
 		}while(vards == null || vards.isEmpty());
 		
 		GalvenaKlase.audzek.add(vards);
+	}
+	
+	static void ievadKrit() {
+		
+		int kritSk;
+		kritSk = Integer.parseInt(JOptionPane.showInputDialog(null, "Kāds būs kritēriju skaits?", "...", JOptionPane.PLAIN_MESSAGE));
+		
+
+		for(int i=0; i<kritSk; i++) {
+			
+			
+				GalvenaKlase.krit.add(JOptionPane.showInputDialog(null, "Ievadi "+(i+1)+". kritēriju", "...").trim());
+				
+		}
+	}
+	
+	static void ievadKritSv() {
+		/*
+		int maxSvars = 100, sk = 0;
+		double atlSvars;
+		
+	for(int i=0; i<GalvenaKlase.krit.size(); i++) {
+		
+			do {
+				
+				GalvenaKlase.kritSv.add(Integer.parseInt(JOptionPane.showInputDialog(null, "Ievadi "+(sk+1)+". kritērija svaru (max: "+maxSvars+")")));
+				maxSvars -= GalvenaKlase.kritSv.get(i);
+				sk++;
+				
+			} while(maxSvars != 0);
+		}
+		*/
+	// Definē kritērijus
+			String[] kriteriji = new String[GalvenaKlase.krit.size()];
+			int[] kriterijaSvars = new int[GalvenaKlase.krit.size()];
+			
+			int maxSvars = 100, sk = 1;
+			double atlSvars;
+			for(int i=0; i<kriteriji.length; i++) {
+				
+				kriteriji[i] = GalvenaKlase.krit.get(i);
+				
+				// Norāda katra kritērija svaru
+				do {
+					
+					kriterijaSvars[i] = Integer.parseInt(JOptionPane.showInputDialog(null, "Ievadi "+(i+1)+". kritērija svaru (max: "+maxSvars+")"));
+					/* Minimālā KATRA ATLIKUŠĀ kritērija svars ir 5
+					 * kopējai svaru vērtībai ir jābūt 100 (ne mazāk, ne vairāk)
+					*/
+					atlSvars = (maxSvars - kriterijaSvars[i]) / (double)(kriteriji.length - sk);
+				} while(kriterijaSvars[i]>maxSvars || kriterijaSvars[i]<5 || 
+					  (i != kriteriji.length-1 && kriterijaSvars[i] == maxSvars) ||
+					  (i == kriteriji.length-1 && (maxSvars - kriterijaSvars[i])  > 0) 
+					  || atlSvars < 5);
+				maxSvars -= kriterijaSvars[i];
+				sk++;
+				GalvenaKlase.kritSv.add(kriterijaSvars[i]);
+			}
 	}
 	
 }
