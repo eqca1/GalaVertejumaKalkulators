@@ -5,16 +5,16 @@ Java programmēšanas valodā izstrādātā programmatūras projekta sākotnēj�
 
 **Darāmo darbu saraksts**
 - [x] Izstrādāt projekta sākotnējo versiju (viena klase, bez metodēm)
-- [ ] Programmas kodu izdalīt metodēs
-- [ ] Programmas kodu izdalīt atsevišķās klasēs
+- [x] Programmas kodu izdalīt metodēs
+- [x] Programmas kodu izdalīt atsevišķās klasēs
 - [x] Programmā ieviest galveno izvēlni
 	- [x] Ievadīt audzēkņus
 	- [x] Ievadīt kritērijus
 	- [x] Ievadīt kritēriju svarus
-	- [ ] Ievadīt vērtējumus
+	- [x] Ievadīt vērtējumus
 	- [ ] Labot kritēriju
 	- [ ] Labot kritērija svaru
 	- [ ] Labot iegūto vērtējumu
-	- [ ] Aprēķināt gala vērtējumu
+	- [x] Aprēķināt gala vērtējumu
 	- [ ] Saglabāt rezultātus failā
 	- [ ] Nolasīt rezultātus no faila
