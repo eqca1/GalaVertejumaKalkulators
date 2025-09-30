@@ -7,10 +7,10 @@ Java programmēšanas valodā izstrādātā programmatūras projekta sākotnēj�
 - [x] Izstrādāt projekta sākotnējo versiju (viena klase, bez metodēm)
 - [ ] Programmas kodu izdalīt metodēs
 - [ ] Programmas kodu izdalīt atsevišķās klasēs
-- [ ] Programmā ieviest galveno izvēlni
-	- [ ] Ievadīt audzēkņus
-	- [ ] Ievadīt kritērijus
-	- [ ] Ievadīt kritēriju svarus
+- [x] Programmā ieviest galveno izvēlni
+	- [x] Ievadīt audzēkņus
+	- [x] Ievadīt kritērijus
+	- [x] Ievadīt kritēriju svarus
 	- [ ] Ievadīt vērtējumus
 	- [ ] Labot kritēriju
 	- [ ] Labot kritērija svaru
