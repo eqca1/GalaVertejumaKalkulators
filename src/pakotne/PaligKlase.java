@@ -1,10 +1,14 @@
 package pakotne;
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.text.DecimalFormat;
 
 import javax.sql.rowset.serial.SerialJavaObject;
 import javax.swing.JOptionPane;
 public class PaligKlase {
+	
+	static DecimalFormat df = new DecimalFormat("0.#");
+
+	static int[][] kriterijaVertejums = new int[GalvenaKlase.audzek.size()][GalvenaKlase.krit.size()];
 	
 	static void pievAudz() {
 		String vards;
@@ -72,5 +76,41 @@ public class PaligKlase {
 				GalvenaKlase.kritSv.add(kriterijaSvars[i]);
 			}
 	}
+	static void ievadVert() {
+		
+		
+
+		
+		for(int i=0; i<kriterijaVertejums.length; i++) {
+			for(int j=0; j<kriterijaVertejums[i].length; j++) {
+				do {
+					kriterijaVertejums[i][j] = Integer.parseInt(JOptionPane.showInputDialog("Ievadi "+GalvenaKlase.audzek.get(i)+" vērtējumu par kritēriju "+GalvenaKlase.krit.get(i)));
+				}while(kriterijaVertejums[i][j]<0 || kriterijaVertejums[i][j]>10);
+			}
+		}
+	}
+	static void vertAprek() {
+		
+		// Gala vērtējuma aprēķināšana
+				double rezultats;
+				for(int i=0; i<GalvenaKlase.audzek.size(); i++) {
+					rezultats=0;
+					for(int j=0; j<GalvenaKlase.krit.size(); j++) {
+						rezultats += ((double) GalvenaKlase.kritSv.get(j)/100)*kriterijaVertejums[i][j];
+					}
+					GalvenaKlase.semVert.add(rezultats);
+				}
+				
+				// Gala vērtējumu izvadīšana
+				for(int i=0; i<GalvenaKlase.audzek.size(); i++) {	
+					for(int j=0; j<GalvenaKlase.krit.size(); j++) {
+						JOptionPane.showMessageDialog(null, "Studenta "+GalvenaKlase.audzek.get(i)+" vērtējums par kritēriju "+GalvenaKlase.krit.get(j)+" ir "+kriterijaVertejums[i][j]+", kura svars ir "+GalvenaKlase.kritSv.get(j));
+					}
+					JOptionPane.showMessageDialog(null, "Semestra vērtējums ir "+df.format(GalvenaKlase.semVert.get(i))+" balles"
+							+ "\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+				}
+		
+	}
+		
 	
 }

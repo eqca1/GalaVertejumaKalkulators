@@ -12,6 +12,8 @@ public class GalvenaKlase {
 	static ArrayList<String> audzek = new ArrayList<String>();
 	static ArrayList<String> krit = new ArrayList<String>();
 	static ArrayList<Integer> kritSv = new ArrayList<Integer>();
+	static ArrayList<Double> semVert = new ArrayList<Double>();
+
 
 	
 	public static void main(String[] args) {
@@ -37,9 +39,12 @@ public class GalvenaKlase {
 			case 0: JOptionPane.showMessageDialog(null, "Programma ir apturēta!"); GalvIzv = -1; break;
 			case 1: PaligKlase.pievAudz(); break;
 			case 2: PaligKlase.ievadKrit(); break;
-			case 3: PaligKlase.ievadKritSv(); break;
-			
-			
+			case 3: if( krit.size() == 0) { JOptionPane.showMessageDialog(null, "Nav ievadīti kritēriji!", "Kļūda", JOptionPane.ERROR_MESSAGE); break; }
+				PaligKlase.ievadKritSv(); break;
+			case 4: PaligKlase.ievadVert(); break;
+			case 6: if( audzek.size() == 0) { JOptionPane.showMessageDialog(null, "Nav ievadīti audzēkņi!", "Kļūda", JOptionPane.ERROR_MESSAGE); break; }
+				if( krit.size() == 0) { JOptionPane.showMessageDialog(null, "Nav ievadīti kritēriji!", "Kļūda", JOptionPane.ERROR_MESSAGE); break; } 
+				PaligKlase.vertAprek(); break;
 			}
 		}while(GalvIzv > 0 || GalvIzv < 8);
 		
