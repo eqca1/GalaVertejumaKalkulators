@@ -1,14 +1,45 @@
 package pakotne;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
+
 public class GalvenaKlase {
+	
+	static ArrayList<String> audzek = new ArrayList<String>();
+	
 	public static void main(String[] args) {
 		int studSk, kritSk;
 		Scanner scan = new Scanner(System.in);
 		DecimalFormat df = new DecimalFormat("0.#");
 		
+		
+		
+		int GalvIzv = Integer.parseInt(JOptionPane.showInputDialog(null, "Izvēlies darbību~\n1. Pievienot audzēkņu!"
+				+ "\n2. Ievadīt kritērijus!\n"
+				+ "3. Ievadīt kritēriju svarus\n"
+				+ "4. Ievadīt vērtējumus\n"
+				+ "5. Labot..->\n"
+				+ "6. Aprēķināt gala vērtējumu\n"
+				+ "7. Saglabāt rezultātus failā\n"
+				+ "8. Nolasīt rezultātus no faila\n"
+				+ "0. Apturēt programmu!", "Izvēlne"));
+		do {
+			switch(GalvIzv) {
+			
+			case 0: JOptionPane.showMessageDialog(null, "Programma ir apturēta!"); GalvIzv = -1; break;
+			case 1: PaligKlase.pievAudz(); break;
+			case 2: 
+			
+			
+			}
+		}while(GalvIzv < 0 || GalvIzv > 8);
+		
+		
+		/*
 		// Audzēkņu skaita ievade
 		do {
 			System.out.println("Cik studentiem aprēķināsi gala vērtējumu?");
@@ -19,7 +50,7 @@ public class GalvenaKlase {
 			studSk = scan.nextInt();
 		}while(studSk<1);
 		String[] studenti = new String[studSk];
-		
+		*/
 		// Vērtēšanas kritēriju skaita ievade
 		do {
 			System.out.println("Kāds būs kritēriju skaits?");
