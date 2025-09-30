@@ -9,8 +9,8 @@ Java programmēšanas valodā izstrādātā programmatūras projekta sākotnēj�
 - [ ] Programmas kodu izdalīt atsevišķās klasēs
 - [x] Programmā ieviest galveno izvēlni
 	- [x] Ievadīt audzēkņus
-	- [ ] Ievadīt kritērijus
-	- [ ] Ievadīt kritēriju svarus
+	- [x] Ievadīt kritērijus
+	- [x] Ievadīt kritēriju svarus
 	- [ ] Ievadīt vērtējumus
 	- [ ] Labot kritēriju
 	- [ ] Labot kritērija svaru
